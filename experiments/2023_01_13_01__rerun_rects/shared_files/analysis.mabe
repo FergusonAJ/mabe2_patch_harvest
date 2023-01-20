@@ -3,6 +3,8 @@ Var cur_genome;
 Var trial_num;
 Var did_repro = "False";
 
+patch_harvest.track_movement = 1;
+
 DataFile fit_file { filename="single_org_fitness.csv"; };
 fit_file.ADD_COLUMN("trial_number", "trial_num" );
 fit_file.ADD_SETUP("cur_genome = main_pop.CALC_MODE('genome')" );

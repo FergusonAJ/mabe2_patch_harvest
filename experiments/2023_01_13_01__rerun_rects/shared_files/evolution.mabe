@@ -17,7 +17,7 @@ max_file.ADD_COLUMN("genome",       "best_org.TRAIT('genome')" );
 max_file.ADD_COLUMN("merit",       "best_org.TRAIT('child_merit')" );
 max_file.ADD_COLUMN("merit_given", "best_org.TRAIT('merit')" );
 max_file.ADD_COLUMN("gen", "best_org.TRAIT('generation')" );
-max_file.ADD_COLUMN("movements", "best_org.TRAIT('movements')" );
+//max_file.ADD_COLUMN("movements", "best_org.TRAIT('movements')" );
 max_file.ADD_COLUMN("map_idx", "best_org.TRAIT('map_idx')" );
 
 @START() {
