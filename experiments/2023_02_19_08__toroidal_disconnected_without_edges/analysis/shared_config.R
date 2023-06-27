@@ -58,6 +58,18 @@ get_final_dom_category_data_filename = function(){
   filename = paste0(data_dir, '/final_dom_categories.csv')
   return(filename)
 }
+get_final_dom_categorized_data_filename = function(){
+  filename = paste0(processed_data_dir, '/categorized_final_dominant_data.csv')
+  return(filename)
+}
+get_final_dom_categorized_summary_filename = function(){
+  filename = paste0(processed_data_dir, '/categorized_final_dominant_summary.csv')
+  return(filename)
+}
+get_final_dom_categorized_map_summary_filename = function(){
+  filename = paste0(processed_data_dir, '/categorized_final_dominant_map_summary.csv')
+  return(filename)
+}
 
 # Data loaders
 load_file = function(filename){
@@ -67,6 +79,10 @@ load_file = function(filename){
     quit()
   }
   return(read.csv(filename)) 
+}
+load_final_dom_raw_data = function(){
+  filename = get_final_dom_raw_data_filename()
+  return(load_file(filename))
 }
 load_final_dom_processed_data = function(){
   filename = get_final_dom_processed_data_filename()
@@ -81,6 +97,18 @@ load_final_dom_processed_map_summary = function(){
   return(load_file(filename))
 }
 load_final_dom_category_data = function(){
-  filename = get_final_dom_category_filename()
+  filename = get_final_dom_category_data_filename()
+  return(load_file(filename))
+}
+load_final_dom_categorized_data = function(){
+  filename = get_final_dom_categorized_data_filename()
+  return(load_file(filename))
+}
+load_final_dom_categorized_summary = function(){
+  filename = get_final_dom_categorized_summary_filename()
+  return(load_file(filename))
+}
+load_final_dom_categorized_map_summary = function(){
+  filename = get_final_dom_categorized_map_summary_filename()
   return(load_file(filename))
 }

@@ -19,5 +19,9 @@ if(file.exists(category_filename)){
   }
   colnames(df_category) = c('seed', 'category')
   df_category$seed = as.numeric(df_category$seed)
-  write.csv(df_category, paste0(data_dir, '/seed_categories.csv'), row.names = F)
+}
+write.csv(df_category, get_final_dom_category_data_filename(), row.names = F)
+cat('File saved to: ', get_final_dom_category_data_filename(), '\n')
+if(nrow(df_category) != nrow(df_summary)){
+  cat('Some seeds still need to be categorized. Please run categorize_seeds_final_dom.py!\n') 
 }

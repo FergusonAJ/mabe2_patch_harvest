@@ -3,24 +3,18 @@ rm(list = ls())
 source('./shared_config.R')
 
 # Load the data
-filename = '../data/combined_final_dominant_data.csv'
-if(!file.exists(filename)){
-  cat('Error! Data file does not exist: ', filename)
-  cat(' Exiting!\n')
-  quit()
-}
-df = read.csv('../data/combined_final_dominant_data.csv')
+df = load_final_dom_raw_data()
+
+# Add and rename columns
 df$nutrients_consumed = df$nutrients_consumed_mean
 df$moves_off_path = df$moves_off_path_mean
 df$base_score = df$nutrients_consumed - df$moves_off_path
 df$total_nutrients = round(130 * df$base_score / log(df$merit, base = 2))
-# Extract total nutrients assuming *some* replicates had a positive score
-for(map_idx in unique(df$map_idx)){
+for(map_idx in unique(df$map_idx)){ # Extract total nutrients assuming *some* replicates had a positive score
   map_mask = df$map_idx == map_idx
   total_nutrients = max(df[map_mask,]$total_nutrients)
   df[map_mask,]$total_nutrients = total_nutrients
 }
-
 df$task_quality = df$base_score / df$total_nutrients
 df$coverage = df$nutrients_consumed / df$total_nutrients
 if(sum(df$base_score < 0) > 0){
@@ -29,7 +23,6 @@ if(sum(df$base_score < 0) > 0){
 if(sum(df$nutrients_consumed == 0) > 0){
   df[df$nutrients_consumed == 0,]$coverage = 0
 }
-cat('File loaded: ', filename, '\n')
 
 # Group data just by seed
 df_grouped = dplyr::group_by(df, seed)
@@ -89,9 +82,6 @@ df$seed_order = seed_order_map[as.character(df$seed)]
 df_map_summary$seed_order = seed_order_map[as.character(df_map_summary$seed)]
 cat ('Data ordered.\n')
 
-# Save data to disk
-if(!dir.exists(processed_data_dir)){
-  dir.create(processed_data_dir)
-}
-write.csv(df, paste0(processed_data_dir, '/processed_full.csv'))
-write.csv(df_summary, paste0(processed_data_dir, '/processed_summary.csv'))
+write.csv(df, get_final_dom_processed_data_filename(), row.names = F)
+write.csv(df_summary, get_final_dom_processed_summary_filename(), row.names = F)
+write.csv(df_map_summary, get_final_dom_processed_map_summary_filename(), row.names = F)
