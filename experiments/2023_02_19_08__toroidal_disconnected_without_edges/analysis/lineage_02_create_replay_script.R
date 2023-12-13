@@ -23,22 +23,24 @@ lineage_func_02_create_replay_script = function(seed, regen = F){
     max_depth = max(df$depth) 
     last_tenth = 0
     for(depth in unique(df$depth)){
+      local_str = ''
       if(depth / max_depth >= last_tenth + 0.1){
         last_tenth = round(depth / max_depth, 1)
         cat(last_tenth, ' ')
       }
-      output_str = paste0(output_str, '  if [ "$1" -eq ', depth,' ]\n')
-      output_str = paste0(output_str, '  then\n')
+      local_str = paste0(local_str, '  if [ "$1" -eq ', depth,' ]\n')
+      local_str = paste0(local_str, '  then\n')
       for(map_idx in unique(df$map_idx)){
         row = df[df$depth == depth & df$map_idx == map_idx,][1,]
-        output_str = paste0(output_str, '    if [ "$2" -eq ', map_idx,' ]\n')
-        output_str = paste0(output_str, '    then\n')
-        output_str = paste0(output_str, '      python3 ../../MABE2_extras/scripts/visualization/eval_patch_harvest.py')
-        output_str = paste0(output_str, ' shared_files/maps/', map_prefix, map_idx, '.txt')
-        output_str = paste0(output_str, ' ', row$movements, '\n')
-        output_str = paste0(output_str, '    fi\n')
+        local_str = paste0(local_str, '    if [ "$2" -eq ', map_idx,' ]\n')
+        local_str = paste0(local_str, '    then\n')
+        local_str = paste0(local_str, '      python3 ../../MABE2_extras/scripts/visualization/eval_patch_harvest.py')
+        local_str = paste0(local_str, ' shared_files/maps/', map_prefix, map_idx, '.txt')
+        local_str = paste0(local_str, ' ', row$movements, '\n')
+        local_str = paste0(local_str, '    fi\n')
       }
-      output_str = paste0(output_str, '  fi\n')
+      local_str = paste0(local_str, '  fi\n')
+      output_str = paste0(output_str, local_str)
     }
     write(output_str, replay_script_filename)
     system(paste0('chmod u+x ', replay_script_filename))

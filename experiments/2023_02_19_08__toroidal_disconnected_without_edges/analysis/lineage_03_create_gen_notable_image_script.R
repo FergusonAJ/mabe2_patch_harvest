@@ -28,13 +28,15 @@ lineage_func_03_create_gen_notable_image_script = function(seed, regen = F){
         last_tenth = round(depth / max_depth, 1)
         cat(last_tenth, ' ')
       }
+      local_str = ''
       for(map_idx in unique(df$map_idx)){
         row = df[df$depth == depth & df$map_idx == map_idx,][1,]
-        output_str = paste0(output_str, 'python3 ../../MABE2_extras/scripts/visualization/eval_patch_harvest.py')
-        output_str = paste0(output_str, ' shared_files/maps/', map_prefix, map_idx, '.txt')
-        output_str = paste0(output_str, ' ', row$movements)
-        output_str = paste0(output_str, ' ', image_output_dir, 'depth_', depth, '__map_', map_idx, '.png\n') # gif_tmp\n')
+        local_str = paste0(local_str, 'python3 ../../MABE2_extras/scripts/visualization/eval_patch_harvest.py')
+        local_str = paste0(local_str, ' shared_files/maps/', map_prefix, map_idx, '.txt')
+        local_str = paste0(local_str, ' ', row$movements)
+        local_str = paste0(local_str, ' ', image_output_dir, 'depth_', depth, '__map_', map_idx, '.png\n') # gif_tmp\n')
       }
+      output_str = paste0(output_str, local_str)
     }
     write(output_str, notable_gen_script_filename)
     system(paste0('chmod u+x ', notable_gen_script_filename))
