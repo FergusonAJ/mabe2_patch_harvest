@@ -1,0 +1,54 @@
+"","exp_name","category","modifier_factor","env_factor","count","task_quality_min","task_quality_max"
+"1","irregular_with_holes_without_edges","Pattern cycling","Hole and no edges","Irregular",182,0,0.3896
+"2","irregular_with_holes_without_edges","Reactive meandering","Hole and no edges","Irregular",7,0.183346065699007,0.455833333333333
+"3","irregular_with_holes_without_edges","Set pattern","Hole and no edges","Irregular",11,0.1104,0.345301757066463
+"4","irregular_without_edges","Loop","No edges or hole","Irregular",67,0,0.728947368421053
+"5","irregular_without_edges","Pattern cycling","No edges or hole","Irregular",117,0.128947368421053,0.5
+"6","irregular_without_edges","Reactive meandering","No edges or hole","Irregular",12,0.166542750929368,0.452614379084967
+"7","irregular_without_edges","Set pattern","No edges or hole","Irregular",3,0.230392156862745,0.396052631578947
+"8","irregular_without_edges","Spiraling","No edges or hole","Irregular",1,0.353903345724907,0.416493416493416
+"9","new_env_connected_patches_without_edges","Loop","No edges or hole","Connected Patches",107,0,0.492253521126761
+"10","new_env_connected_patches_without_edges","Pattern cycling","No edges or hole","Connected Patches",66,0,0.240140845070423
+"11","new_env_connected_patches_without_edges","Plowing","No edges or hole","Connected Patches",12,0.078169014084507,0.234507042253521
+"12","new_env_connected_patches_without_edges","Reactive meandering","No edges or hole","Connected Patches",6,0.0528169014084507,0.271830985915493
+"13","new_env_connected_patches_without_edges","Set pattern","No edges or hole","Connected Patches",4,0.0661971830985915,0.261971830985915
+"14","new_env_connected_patches_without_edges","Spiraling","No edges or hole","Connected Patches",5,0,0.31830985915493
+"15","new_env_rect_with_hole_without_edges","Pattern cycling","Hole and no edges","Rectangular",176,0,0.528801843317972
+"16","new_env_rect_with_hole_without_edges","Plowing","Hole and no edges","Rectangular",1,0.270833333333333,0.278801843317972
+"17","new_env_rect_with_hole_without_edges","Reactive meandering","Hole and no edges","Rectangular",12,0.0161290322580645,0.618577075098814
+"18","new_env_rect_with_hole_without_edges","Set pattern","Hole and no edges","Rectangular",10,0.16798418972332,0.360671936758893
+"19","new_env_rect_with_hole_without_edges","Spiraling","Hole and no edges","Rectangular",1,0.645315487571702,0.838068181818182
+"20","toroidal_connected_patches","Loop","Edges and no hole","Connected Patches",72,0,0.42112676056338
+"21","toroidal_connected_patches","Pattern cycling","Edges and no hole","Connected Patches",93,0,0.307746478873239
+"22","toroidal_connected_patches","Plowing","Edges and no hole","Connected Patches",7,0,0.292957746478873
+"23","toroidal_connected_patches","Reactive meandering","Edges and no hole","Connected Patches",25,0.076056338028169,0.276056338028169
+"24","toroidal_connected_patches","Set pattern","Edges and no hole","Connected Patches",3,0.0873239436619718,0.13943661971831
+"25","toroidal_disconnected_with_edges","Loop","Edges and no hole","Disconnected Patches",4,0.0874587458745875,0.234323432343234
+"26","toroidal_disconnected_with_edges","Pattern cycling","Edges and no hole","Disconnected Patches",136,0,0.311881188118812
+"27","toroidal_disconnected_with_edges","Plowing","Edges and no hole","Disconnected Patches",26,0,0.324257425742574
+"28","toroidal_disconnected_with_edges","Reactive meandering","Edges and no hole","Disconnected Patches",26,0,0.278052805280528
+"29","toroidal_disconnected_with_edges","Spiraling","Edges and no hole","Disconnected Patches",8,0,0.396039603960396
+"30","toroidal_disconnected_without_edges","Loop","No edges or hole","Disconnected Patches",14,0.0577557755775578,0.212046204620462
+"31","toroidal_disconnected_without_edges","Pattern cycling","No edges or hole","Disconnected Patches",124,0,0.229372937293729
+"32","toroidal_disconnected_without_edges","Plowing","No edges or hole","Disconnected Patches",24,0,0.18976897689769
+"33","toroidal_disconnected_without_edges","Reactive meandering","No edges or hole","Disconnected Patches",17,0,0.357260726072607
+"34","toroidal_disconnected_without_edges","Spiraling","No edges or hole","Disconnected Patches",21,0,0.510726072607261
+"35","toroidal_irregular_with_edges","Loop","Edges and no hole","Irregular",43,0,0.722368421052632
+"36","toroidal_irregular_with_edges","Pattern cycling","Edges and no hole","Irregular",135,0,0.497368421052632
+"37","toroidal_irregular_with_edges","Reactive meandering","Edges and no hole","Irregular",21,0.126973684210526,0.590686274509804
+"38","toroidal_irregular_with_edges","Set pattern","Edges and no hole","Irregular",1,0.241013071895425,0.394078947368421
+"39","toroidal_irregular_with_hole_and_edges","Pattern cycling","Edges and hole","Irregular",183,0,0.4208
+"40","toroidal_irregular_with_hole_and_edges","Reactive meandering","Edges and hole","Irregular",11,0,0.519480519480519
+"41","toroidal_irregular_with_hole_and_edges","Set pattern","Edges and hole","Irregular",6,0.1304,0.32425068119891
+"42","toroidal_rect","Pattern cycling","Edges and no hole","Rectangular",165,0.03125,0.84375
+"43","toroidal_rect","Plowing","Edges and no hole","Rectangular",1,0.37875,0.515909090909091
+"44","toroidal_rect","Reactive meandering","Edges and no hole","Rectangular",6,0.08,0.536363636363636
+"45","toroidal_rect","Set pattern","Edges and no hole","Rectangular",28,0.12625,0.612244897959184
+"46","toroidal_rect_no_edge","Pattern cycling","No edges or hole","Rectangular",163,0,0.761363636363636
+"47","toroidal_rect_no_edge","Plowing","No edges or hole","Rectangular",3,0.263636363636364,0.893181818181818
+"48","toroidal_rect_no_edge","Reactive meandering","No edges or hole","Rectangular",4,0.29375,0.612244897959184
+"49","toroidal_rect_no_edge","Set pattern","No edges or hole","Rectangular",30,0.14875,0.656887755102041
+"50","toroidal_rect_with_hole_and_edges","Pattern cycling","Edges and hole","Rectangular",160,0,0.630184331797235
+"51","toroidal_rect_with_hole_and_edges","Reactive meandering","Edges and hole","Rectangular",25,0,0.580645161290323
+"52","toroidal_rect_with_hole_and_edges","Set pattern","Edges and hole","Rectangular",10,0.119502868068834,0.357707509881423
+"53","toroidal_rect_with_hole_and_edges","Spiraling","Edges and hole","Rectangular",5,0.0288018433179724,0.726284584980237
