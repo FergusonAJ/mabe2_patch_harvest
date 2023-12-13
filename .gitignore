@@ -1,2 +1,6 @@
 # Ignore vim swap files
 *.swp
+
+# R generated files
+*.Rhistory
+Rplots.pdf
