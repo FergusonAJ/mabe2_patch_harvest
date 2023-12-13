@@ -1,0 +1,16 @@
+rm(list = ls())
+
+source('shared_config.R')
+
+cat('Running: final_dom_00_process_raw_data.R\n')
+source('final_dom_00_process_raw_data.R')
+cat('Running: final_dom_01_create_gen_image_script.R\n')
+source('final_dom_01_create_gen_image_script.R')
+cat('Running: final_dom_02_create_replay_script.R\n')
+source('final_dom_02_create_replay_script.R')
+cat('Runninng: final_dom_04_plot_processed_data.R\n')
+source('final_dom_03_plot_processed_data.R')
+cat('Running: final_dom_04_create_category_file.R\n')
+source('final_dom_04_create_category_file.R')
+cat('Running: final_dom_05_load_category_data.R\n')
+source('final_dom_05_load_category_data.R')
