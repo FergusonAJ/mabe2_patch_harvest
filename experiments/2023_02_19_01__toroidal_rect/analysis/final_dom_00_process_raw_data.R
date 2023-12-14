@@ -5,6 +5,24 @@ source('./shared_config.R')
 # Load the data
 df = load_final_dom_raw_data()
 
+# Trim out duplicates
+# To make running things easier, I just ran 100 random trials for each seed
+# The odds of missing a map are worse than 1 in a trillion
+# However, we now want to trim things to trial per map
+df$trial_in_map = NA
+for(map_idx in 0:3){
+  for(seed in unique(df$seed)){
+    mask = df$seed == seed & df$map_idx == map_idx
+    # Make sure all replicates on this map are identical
+    if(length(unique(df[mask,]$movements)) && length(unique(df[mask,]$task_quality)) == 1){
+      cat('Error! Seed', seed, 'has more than one unique trace on map', map_idx)
+      q()
+    }
+    df[mask,]$trial_in_map = 1:sum(mask)
+  } 
+}
+df = df[df$trial_in_map == 1,] # Here is where we actual trim the duplicates
+
 # Add and rename columns
 df$nutrients_consumed = df$nutrients_consumed_mean
 df$moves_off_path = df$moves_off_path_mean

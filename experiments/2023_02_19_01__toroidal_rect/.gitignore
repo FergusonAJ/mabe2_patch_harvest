@@ -5,11 +5,10 @@ scripts/*
 old
 
 # Ignore data files that are too large
-data/processed/categorized_final_dominant_data.csv
-data/processed/processed_final_dominant_data.csv
 data/processed/processed_full.csv
 
 # Ignore all reps (auto-generated)
+trace_final_dom/seeds
 data/reps/1
 data/reps/2
 data/reps/3
