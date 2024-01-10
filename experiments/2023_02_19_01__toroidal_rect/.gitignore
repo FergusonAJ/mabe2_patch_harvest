@@ -10,6 +10,7 @@ data/processed/processed_full.csv
 # Ignore all reps (auto-generated)
 trace_final_dom/seeds
 trace_final_dom/images
+trace_final_dom/single_org_fitness.csv
 data/reps/1
 data/reps/2
 data/reps/3
